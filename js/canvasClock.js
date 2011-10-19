@@ -1,19 +1,20 @@
 /*
-For desktop browser size clock depending on the size of the canvas. To correctly display the clock must to comply with the proportion of the canvas about x/y = 3.3
+For desktop browser size clock depending on the size of the canvas.
+To correctly display the clock must to comply with the proportion of the canvas about x/y = 3.3
 */
 function canvasClock(canvas){
 	var mobile = (/Mobile/i).test(navigator.userAgent);
 	var step_angle;
-	if (mobile) {																			//for mobile browser
-		step_angle = 10;																	//step of angle animation
-		canvas.width = parseInt(document.documentElement.clientWidth*0.9);					//setting the width and height of the canvas
+	if (mobile) {	//for mobile browser
+		step_angle = 10;	//step of angle animation
+		canvas.width = parseInt(document.documentElement.clientWidth*0.9);	//setting the width and height of the canvas
 		if (parseInt(canvas.width/3.3)%2 == 0) canvas.height = parseInt(canvas.width/3.3);
 		else canvas.height = parseInt(canvas.width/3.3)+1;
 	}
-	else {																					//for desktop browser
-		step_angle = 2;																		//step of angle animation
+	else {	//for desktop browser
+		step_angle = 2;		//step of angle animation
 		if (canvas.width < 320) {
-			canvas.width = 660;																//setting the width and height of the canvas
+			canvas.width = 660;		//setting the width and height of the canvas
 			canvas.height = 200;
 		}
 	}
@@ -42,8 +43,8 @@ function canvasClock(canvas){
 	var min_string;
 	var sec_string;
 	var switch_true = true;
-	var color = "rgb(40,230,105)";															//color of the digits
-	var colorback = "rgb(14,42,14)";														//background color of the digits
+	var color = "rgb(40,230,105)";	//color of the digits
+	var colorback = "rgb(14,42,14)";	//background color of the digits
 	var count;
 
 //positioning canvas
